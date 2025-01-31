@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Products</title>
+    <link rel="stylesheet" href="assets/css/plugin/swiper.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex align-center justify-between">
+            <div class="left d-flex align-center">
+                <a href="./index.html" class="logo"><span>AmazingS</span>ave</a>
+                <div class="search">
+                    <input type="text" class="search-inp" placeholder="Find Amazon Products">
+                    <div class="search-clear">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none">
+                            <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#1D2023"/>
+                        </svg>
+                    </div>
+                    <div class="search-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.6806 22.123L18.8812 17.3364C20.1697 15.6282 20.856 13.3104 20.9094 10.4104C20.7949 3.74043 17.0832 0.0437733 10.4487 0C3.73456 0.042679 0 3.95273 0 10.4093C0 17.1887 3.73784 20.8186 10.4618 20.858C13.3301 20.8405 15.6322 20.1729 17.3385 18.8827L22.1423 23.6748C22.2427 23.7781 22.3629 23.8601 22.4955 23.916C22.6282 23.9718 22.7707 24.0004 22.9145 24C23.0584 23.9996 23.2008 23.9702 23.3331 23.9136C23.4654 23.857 23.5851 23.7743 23.685 23.6704C23.8876 23.4639 24.0008 23.1856 24 22.8958C23.9992 22.6061 23.8844 22.3284 23.6806 22.123ZM2.18204 10.429C2.28787 4.91903 4.99579 2.22259 10.4476 2.18867C15.8471 2.22368 18.6336 5.0022 18.7274 10.4093C18.6248 16.0123 15.9944 18.6365 10.4618 18.6693C4.92269 18.6365 2.29114 16.0188 2.18204 10.429Z" fill="#5D6670"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="right d-flex align-center">
+                <ul class="nav d-flex">
+                    <li><a href="#">Popular Products</a></li>
+                    <li><a href="#">Top Price Drops</a></li>
+                    <li><a href="#">Browser Extensions</a></li>
+                </ul>
+                <button class="signIn-btn btn">Sign In</button>
+                <div class="menu-btn">
+                    <img src="assets/img/svg/menu.svg" alt="">
+                    <img src="assets/img/svg/close.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="menu d-none">
+            <div class="menu-content">
+                <ul class="nav d-flex">
+                    <li><a href="#">Popular Products</a></li>
+                    <li><a href="#">Top Price Drops</a></li>
+                    <li><a href="#">Browser Extensions</a></li>
+                </ul>
+                <button class="signIn-btn btn">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="products products_page">
+            <div class="container">
+                <div class="products-top d-flex justify-between align-end">
+                    <div class="top">
+                        <h2 class="title-text">Popular Products</h2>
+                        <div class="top-btns d-flex">
+                            <div class="tab-btns d-flex flex-wrap">
+                                <label for="popular1" class="tab-btn" data-tab="popular_1">
+                                    <input type="radio" name="popular" id="popular1" checked>
+                                    <span>All Products</span>
+                                </label>
+                                <label for="popular2" class="tab-btn" data-tab="popular_2">
+                                    <input type="radio" name="popular" id="popular2">
+                                    <span>Deals Only</span>
+                                </label>
+                            </div>
+                            <div class="select">
+                                <div class="select-head d-flex align-center justify-between">
+                                    <span class="select-active">All Categories</span>
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92493 4.05182C5.95529 4.06562 5.98013 4.07582 5.99993 4.08338C6.01973 4.07582 6.04469 4.06562 6.07505 4.05182C6.21329 3.9893 6.39641 3.88586 6.6208 3.73718C7.06864 3.44041 7.58511 3.02784 8.08995 2.59187C8.58974 2.1601 9.05474 1.72545 9.39637 1.39724L9.9438 0.859198C10.4081 0.386423 11.1679 0.379403 11.6408 0.84373C12.1136 1.30808 12.1206 2.06782 11.6562 2.54075L11.0593 3.12768C10.6986 3.47437 10.2008 3.93986 9.65881 4.40811C9.12169 4.87204 8.51726 5.35961 7.94655 5.73786C7.66155 5.92663 7.36095 6.10435 7.06384 6.23876C6.78772 6.36356 6.40996 6.5 5.99993 6.5C5.59001 6.5 5.21226 6.36356 4.93614 6.23875C4.63903 6.10435 4.33831 5.92663 4.05343 5.73786C3.48273 5.35961 2.87832 4.87204 2.34122 4.40811C1.79916 3.93986 1.30139 3.47437 0.940621 3.12768L0.343796 2.54075C-0.120551 2.06782 -0.11365 1.30808 0.359204 0.84373C0.832035 0.379403 1.59187 0.386423 2.05622 0.859198L2.6036 1.39724C2.94519 1.72545 3.41024 2.1601 3.91003 2.59187C4.41487 3.02784 4.93134 3.44041 5.37918 3.73718C5.60357 3.88586 5.78669 3.9893 5.92493 4.05182Z" fill="#5D6670"/>
+                                    </svg>
+                                </div>
+                                <ul class="options">
+                                    <li class="option active">All Categories</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                    <li class="option">Lorem, ipsum.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-box">
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p1.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>129.16</span></p>
+                                <p class="old-price">AVG $<span>131.99</span></p>
+                                <p class="product-text">Dremel 8250-5 12V Lithium-Ion Variable Speed Cordless Rotary Tool with Brushless Motor - 5 Rotary Tool Accessories, 3Ah Battery, Charger, and Toor Smart TVOLED65C3PUA, 202or Smart TVr Smart TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p2.png" alt="" class="photo">
+                            <div class="status good">Good Deal</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>242.19</span></p>
+                                <p class="old-price">AVG $<span>243.92</span></p>
+                                <p class="product-text">BOSCH 1617EVSPK Wood 12 Amp Router Tool Combo Kit - 2.25 Horsepower Plunge Router & Fixed Base with a Variable Speed Motor</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p3.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>1,452.10</span></p>
+                                <p class="old-price">AVG $<span>1,481.09</span></p>
+                                <p class="product-text">LG C3 Series 65-Inch Class OLED evo 4K Processor Smart Flat Screen TV for Gaming with Magic Remote AI-Powered OLED65C3PUA, 202or Smart TVr Smart TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p4.png" alt="" class="photo">
+                            <div class="status good">Good Deal</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>649.99</span></p>
+                                <p class="old-price">AVG $<span>724.28</span></p>
+                                <p class="product-text">Sapphire 11323-02-20G Pulse AMD Radeon RX 7900 XT Gaming Graphics Card with 20GB GDDR6, AMD RDNA 3</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p5.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>219.43</span></p>
+                                <p class="old-price">AVG $<span>220.79</span></p>
+                                <p class="product-text">DEWALT 20V MAX Cordless Drill, Impact Driver, 2-Tool Power Tool Combo Kit, Brushless Power Tool Set with 2 Batteries and Charger OLED65C3PUA, 202or Smart TVr Smart TVk</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p6.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>68.99</span></p>
+                                <p class="old-price">AVG $<span>82.87</span></p>
+                                <p class="product-text">SanDisk 1TB Ultra microSDXC UHS-I Memory Card with Adapter - Up to 150MB/ s, C10, U1, Full HD, A1, MicroSD Card - SDSQUAC-1T00-GN6MA [New Version]</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p7.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>799.99</span></p>
+                                <p class="old-price"><span>879.05</span></p>
+                                <p class="product-text">BOSCH 1617EVSPK Wood 12 Amp Router Tool Combo Kit - 2.25 Horsepower Plunge Router & Fixed Base with a Variable Speed Motor</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p8.png" alt="" class="photo">
+                            <div class="status good">Good Deal</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>359.00</span></p>
+                                <p class="old-price">AVG $<span>412.65</span></p>
+                                <p class="product-text">Apple Watch Series 10 [GPS 46mm case] Smartwatch with Jet Black Aluminium Case with Black Sport Band - M/ L. Fitness Tracker, ECG App, Always-On Retina Display, Water ResistantOLED65C3PUA, 202or Smart TVr Smart TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p9.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>1,699.96</span></p>
+                                <p class="old-price">AVG $<span>1,988.96</span></p>
+                                <p class="product-text">Hisense U8 Series 85U8N 85-Inch ULED 4K Smart TV | Mini-LED Pro | QLED | 3000 Nits | 144Hz | Motion Rate 480 | Dolby Vision IQ · Atmos | Full Array Local Dimming | 2.1.2 Ch Surround Sound | Google TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p10.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>499.95</span></p>
+                                <p class="old-price">AVG $<span>499.97</span></p>
+                                <p class="product-text">Ninja Espresso Machine, Luxe Café Premier Series, Drip Coffee Maker and Rapid Cold Brew, Integrated Grinder, Assisted Tamper, Hands-Free Frother, for Cappuccinos and Lattes, Dairy or Non-Dairy, ES601</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div> 
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/h1.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>146.97</span></p>
+                                <p class="old-price">AVG $<span>169.97</span></p>
+                                <p class="product-text">CHEF iQ Sense Smart Wireless Meat Thermometer with 3 Ultra-Thin Probes, Unlimited Range Bluetooth Meat Thermometer, Digital Food Thermometer for Remote Monitoring of BBQ Grill, Oven</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/h2.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>242.19</span></p>
+                                <p class="old-price">AVG $<span>243.92</span></p>
+                                <p class="product-text">BOSCH 1617EVSPK Wood 12 Amp Router Tool Combo Kit - 2.25 Horsepower Plunge Router & Fixed Base with a Variable Speed Motor</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/h3.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">Out of Stock</p>
+                                <p class="old-price">AVG $<span>12.55</span></p>
+                                <p class="product-text">BOSCH 1617EVSPK Wood 12 Amp Router Tool Combo Kit - 2.25 Horsepower Plunge Router & Fixed Base with a Variable Speed Motor</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/h4.png" alt="" class="photo">
+                            <div class="status good">Good Deal</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>192.54</span></p>
+                                <p class="old-price">AVG $<span>196.0</span></p>
+                                <p class="product-text">PyleUsa Portable Bluetooth PA Speaker - 500W 12” Rechargeable Outdoor BT Karaoke Audio System - TWS, Party Lights, LED Display, FM/ AUX/ MP3/ USB/ SD, 6.5mm in, Carry Handle - Wireless Mic, Remote ControlResistant, Anti-Glare Outdoor Smart TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/h5.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>149.97</span></p>
+                                <p class="old-price">AVG $<span>195.57</span></p>
+                                <p class="product-text">ULTRALOQ U-Bolt Pro WiFi Smart Lock with Door Sensor, 8-in-1 Keyless Entry Door Lock with Built-in WiFi, Fingerprint ID, App Remote Control, Auto Unlock, Door Status Alert, WiFi Deadbolt Door Lock</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>  
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p11.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>159.99</span></p>
+                                <p class="old-price">AVG $<span>241.09</span></p>
+                                <p class="product-text">AMD Ryzen 7 5800XT 8-Core, 16-Thread Unlocked Desktop Processor</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p2.png" alt="" class="photo">
+                            <div class="status good">Good Deal</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>242.19</span></p>
+                                <p class="old-price">AVG $<span>243.92</span></p>
+                                <p class="product-text">BOSCH 1617EVSPK Wood 12 Amp Router Tool Combo Kit - 2.25 Horsepower Plunge Router & Fixed Base with a Variable Speed Motor</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p12.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price">$<span>1,452.10</span></p>
+                                <p class="old-price">AVG $<span>1,481.09</span></p>
+                                <p class="product-text">PlayStation Portal Remote Player 5, 202or Smart TVr Smart TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p13.png" alt="" class="photo">
+                            <div class="status">Best Price</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>59.95</span></p>
+                                <p class="old-price">AVG $<span>64.10</span></p>
+                                <p class="product-text">LEGO Technic Planet Earth and Moon in Orbit Building Set, Outer Space Birthday Gift for 10 Year Olds, Solar System Space Toy for Imaginative, Independent Play, Space Room Décor for Boys & Girls, 42179</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo">
+                            <img src="assets/img/png/p14.png" alt="" class="photo">
+                            <div class="status good">Good Deal</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="">
+                                <p class="product-price stock">$<span>249.99</span></p>
+                                <p class="old-price">AVG $<span>285.60</span></p>
+                                <p class="product-text">SAMSUNG T7 Portable SSD, 4TB External Solid State Drive, Speeds Up to 1, 050MB/ s, USB 3.2 Gen 2, Reliable Storage for Gaming, Students, Professionals, MU-PC4T0T/ AM, Gray OLED65C3PUA, 202or Smart TVr Smart TV</p>
+                            </div>
+                            <a href="./product-card.html" class="product-view btn">View at Amazon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-nav d-flex justify-between">
+                <ul class="nav d-flex">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Top Price Drops</a></li>
+                    <li><a href="#">Browser Extensions</a></li>
+                </ul>
+                <ul class="nav d-flex">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-info d-flex justify-between">
+                <p class="info-text">Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon at the time of purchase will apply to the purchase of this product. As an Amazon Associate I earn from qualifying purchases. Amazing Save receives a commission on all purchases made through our Amazon links.</p>
+                <div class="footer-select d-flex">
+                    <div class="select-box">
+                        <p class="select-title">Shopping Location</p>
+                        <div class="select">
+                            <div class="select-head d-flex align-center justify-between">
+                                <span class="select-active">United States</span>
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92493 4.05182C5.95529 4.06562 5.98013 4.07582 5.99993 4.08338C6.01973 4.07582 6.04469 4.06562 6.07505 4.05182C6.21329 3.9893 6.39641 3.88586 6.6208 3.73718C7.06864 3.44041 7.58511 3.02784 8.08995 2.59187C8.58974 2.1601 9.05474 1.72545 9.39637 1.39724L9.9438 0.859198C10.4081 0.386423 11.1679 0.379403 11.6408 0.84373C12.1136 1.30808 12.1206 2.06782 11.6562 2.54075L11.0593 3.12768C10.6986 3.47437 10.2008 3.93986 9.65881 4.40811C9.12169 4.87204 8.51726 5.35961 7.94655 5.73786C7.66155 5.92663 7.36095 6.10435 7.06384 6.23876C6.78772 6.36356 6.40996 6.5 5.99993 6.5C5.59001 6.5 5.21226 6.36356 4.93614 6.23875C4.63903 6.10435 4.33831 5.92663 4.05343 5.73786C3.48273 5.35961 2.87832 4.87204 2.34122 4.40811C1.79916 3.93986 1.30139 3.47437 0.940621 3.12768L0.343796 2.54075C-0.120551 2.06782 -0.11365 1.30808 0.359204 0.84373C0.832035 0.379403 1.59187 0.386423 2.05622 0.859198L2.6036 1.39724C2.94519 1.72545 3.41024 2.1601 3.91003 2.59187C4.41487 3.02784 4.93134 3.44041 5.37918 3.73718C5.60357 3.88586 5.78669 3.9893 5.92493 4.05182Z" fill="#5D6670"/>
+                                </svg>
+                            </div>
+                            <ul class="options">
+                                <li class="option active">United States</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="select-box">
+                        <p class="select-title">Time Zone</p>
+                        <div class="select">
+                            <div class="select-head d-flex align-center justify-between">
+                                <span class="select-active">Karachi</span>
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92493 4.05182C5.95529 4.06562 5.98013 4.07582 5.99993 4.08338C6.01973 4.07582 6.04469 4.06562 6.07505 4.05182C6.21329 3.9893 6.39641 3.88586 6.6208 3.73718C7.06864 3.44041 7.58511 3.02784 8.08995 2.59187C8.58974 2.1601 9.05474 1.72545 9.39637 1.39724L9.9438 0.859198C10.4081 0.386423 11.1679 0.379403 11.6408 0.84373C12.1136 1.30808 12.1206 2.06782 11.6562 2.54075L11.0593 3.12768C10.6986 3.47437 10.2008 3.93986 9.65881 4.40811C9.12169 4.87204 8.51726 5.35961 7.94655 5.73786C7.66155 5.92663 7.36095 6.10435 7.06384 6.23876C6.78772 6.36356 6.40996 6.5 5.99993 6.5C5.59001 6.5 5.21226 6.36356 4.93614 6.23875C4.63903 6.10435 4.33831 5.92663 4.05343 5.73786C3.48273 5.35961 2.87832 4.87204 2.34122 4.40811C1.79916 3.93986 1.30139 3.47437 0.940621 3.12768L0.343796 2.54075C-0.120551 2.06782 -0.11365 1.30808 0.359204 0.84373C0.832035 0.379403 1.59187 0.386423 2.05622 0.859198L2.6036 1.39724C2.94519 1.72545 3.41024 2.1601 3.91003 2.59187C4.41487 3.02784 4.93134 3.44041 5.37918 3.73718C5.60357 3.88586 5.78669 3.9893 5.92493 4.05182Z" fill="#5D6670"/>
+                                </svg>
+                            </div>
+                            <ul class="options">
+                                <li class="option active">Karachi</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                                <li class="option">Lorem, ipsum.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex justify-between">
+                <span>© 2025, Amazing Save</span>
+                <div class="d-flex">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/plugin/swiper.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/select.js"></script>
+</body>
+</html>
